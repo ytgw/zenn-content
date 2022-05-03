@@ -64,11 +64,12 @@ if request.user == foo_user:
 
 ### ログイン
 ログインするには```login()```関数を使います。
+usernameとpasswordはPOSTリクエストから取得することを想定しています。
 
 ```python
 from django.contrib.auth import authenticate, login
 
-def my_view(request):
+def login_view(request):
     username = request.POST['username']
     password = request.POST['password']
     user = authenticate(request, username=username, password=password)
@@ -101,8 +102,8 @@ ToDoリストアプリの概要としては下記のとおりです。
 
 ### タスクモデルからDjangoユーザモデルを参照する
 タスクモデルはDjangoユーザとタスク名のみ属性を持ちます。
-タスクモデルからDjangoユーザモデルを参照するには、下記の通り```from django.conf.settings.AUTH_USER_MODEL```を外部参照キーにします。
-なお、```name```属性をユニークにしているのは、本記事に関係ない事情で設定時の挙動を試したかったからなので、無視してください。
+タスクモデルからDjangoユーザモデルを参照するには、下記の通り```django.conf.settings.AUTH_USER_MODEL```を外部参照キーにします。
+なお、```name```属性をユニークにしているのは、本記事に関係ない事情で設定時の挙動を試したかったからなので、気にしないでください。
 
 
 ```python:todo_list/models.py
@@ -273,3 +274,13 @@ def delete_task(request: HttpRequest) -> HttpResponse:
     task.delete()
     return HttpResponseRedirect('../../')
 ```
+
+
+## まとめ
+Djangoのユーザ認証機能を試すために作成したToDoリストアプリを紹介しました。
+
+PythonでWEBアプリ開発というとDjango以外にもFlaskなどが選択肢に入ります。
+Flaskの場合データベース連携や認証はプラグインのパッケージを導入する必要が有り、その選定が面倒だということでDjangoを選びました。
+実際に使ってみましたが、大きく戸惑うことなく利用できました。
+
+Django自体使ってみて一週間も立っていないので、イマイチなコードになっているかもしれませんので、お気づきになられた方はコメント等いただけると嬉しいです。
