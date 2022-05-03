@@ -3,7 +3,7 @@ title: "Djangoのユーザ認証を試してみた"
 emoji: "😎"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Python", "Django"]
-published: false
+published: true
 ---
 
 
