@@ -3,7 +3,7 @@ title: "NGINXのリバースプロキシ機能を使う"
 emoji: "🤖"
 type: "tech"
 topics: ["nginx", "リバースプロキシ", "Docker"]
-published: false
+published: true
 ---
 
 
