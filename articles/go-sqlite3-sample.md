@@ -25,7 +25,7 @@ go mod init sqlite
 GoでDBを扱う場合SQL database driversを入れる必要があります。
 ドライバーの一覧は[公式のWiki](https://github.com/golang/go/wiki/SQLDrivers)に記載されています。
 今回はこの中から[mattn/go-sqlite3](https://github.com/mattn/go-sqlite3)を選択しました。
-理由は「both included in and pass the compatibility test suite at https://github.com/bradfitz/go-sql-test .」と記載があったからです。
+理由は確認時点で「both included in and pass the compatibility test suite at https://github.com/bradfitz/go-sql-test .」と記載がある唯一のSQLite3用ドライバーだったからです。
 下記コマンドでインストールします。
 
 ```bash
