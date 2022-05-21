@@ -3,7 +3,7 @@ title: "Go言語でSQLite3を使う"
 emoji: "📌"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [Go, SQLite3]
-published: false
+published: true
 ---
 
 ## 概要
