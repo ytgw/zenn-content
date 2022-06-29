@@ -3,7 +3,7 @@ title: "【個人開発】ローカルサーバーにインターネットから
 emoji: "🐈‍⬛"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["個人開発", "SSH", "ngrok", "localhost.run"]
-published: false
+published: true
 ---
 
 ## サービスの概要
