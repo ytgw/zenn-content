@@ -2,7 +2,7 @@
 title: "【個人開発】ローカルサーバーにインターネットからアクセス可能にするサービスを作ったので使ってほしい"
 emoji: "🐈‍⬛"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["個人開発", "SSH", "ngrok", "localhost.run"]
+topics: ["個人開発", "SSH", "ngrok", "localhostrun"]
 published: true
 ---
 
