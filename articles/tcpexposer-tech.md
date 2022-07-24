@@ -3,7 +3,7 @@ title: "個人開発で利用したソフトウェアやサービスとその選
 emoji: "📝"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["個人開発", "Django", "SQLite", "sish", "VPS"]
-published: false
+published: true
 ---
 
 
