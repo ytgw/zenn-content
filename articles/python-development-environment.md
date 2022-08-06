@@ -74,7 +74,38 @@ extend-exclude = '''
 <!-- ---------------------------------------------------------------------- -->
 
 
-### isort
+### [isort](https://pycqa.github.io/isort/)
+
+isortはインポートをアルファベット順にソートするフォーマッターです。
+ライブラリのソートはblackでは行わないため、isortを導入しました。
+
+下記コマンドでインストールできます。
+
+```bash
+pip install isort
+```
+
+また、下記コマンドで指定のファイルおよびディレクトリ内のファイルをフォーマットします。
+
+```bash
+isort {source_file_or_directory}
+```
+
+設定はpyproject.tomlに記載します。
+blackと共存して使う場合は設定ファイルpyproject.tomlにプロファイル設定を書きます。
+
+```toml:pyproject.toml
+[tool.isort]
+# blackと共存して使う設定
+# https://pycqa.github.io/isort/docs/configuration/black_compatibility.html
+profile = "black"
+
+# .gitignoreファイルで指定されているファイルを除外
+skip_gitignore = true
+
+# デフォルトに追加したいフォーマット対象外指定ファイルやディレクトリ
+extend_skip_glob = ["**/migrations/*"]  # 自動生成されたDB migrationファイル
+```
 
 
 <!-- ---------------------------------------------------------------------- -->
