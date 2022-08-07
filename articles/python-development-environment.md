@@ -2,7 +2,7 @@
 title: "Python開発環境の備忘録"
 emoji: "🐍"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["python", "black", "flask8", "mypy", "vscode"]
+topics: ["python", "black", "flake8", "mypy", "vscode"]
 published: false
 ---
 
@@ -112,6 +112,50 @@ extend_skip_glob = ["**/migrations/*"]  # 自動生成されたDB migrationフ�
 
 
 ## リンター
+
+フォーマッターでは直せない問題を検知するためにリンターを導入します。
+リンターはflake8を選びました。
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+
+### [flake8](https://flake8.pycqa.org/en/latest/)
+
+flake8は下記コマンドでインストールできます。
+
+```bash
+pip install flake8
+```
+
+また、下記コマンドで指定のファイルおよびディレクトリ内のファイルをチェックします。
+
+```bash
+flake8 {source_file_or_directory}
+```
+
+設定はsetup.cfgに記載します。
+
+```:setup.cfg
+[flake8]
+# https://flake8.pycqa.org/en/latest/user/configuration.html
+
+# 最大行数はblackに合わせる
+max-line-length = 88
+
+# デフォルトに追加したいフォーマット対象外指定ファイルやディレクトリ
+# https://flake8.pycqa.org/en/latest/user/options.html#cmdoption-flake8-exclude
+# flake8には.gitignoreファイルで指定されているファイルを一括で除外するオプションはない
+# デフォルトは.svn,CVS,.bzr,.hg,.git,__pycache__,.tox,.nox,.eggs,*.egg
+extend-exclude = **/migrations/*,venv/,.venv/
+
+# 無視するルールの設定
+# https://flake8.pycqa.org/en/latest/user/options.html#cmdoption-flake8-ignore
+# blackとの競合を避けるための設定
+# Line too long (82 > 79 characters) (E501)
+# Line break occurred before a binary operator (W503)
+ignore = E501,W503
+```
 
 
 <!-- ---------------------------------------------------------------------- -->
