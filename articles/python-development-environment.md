@@ -163,6 +163,47 @@ ignore = E501,W503
 
 ## 型チェック
 
+型ヒントを使いながらコーディングすることで、メソッドが補完されたり、コードの意図を伝えたりできるため、私は意識して使っています。
+型ヒントを使っていない箇所や、型と合っていない操作をしている箇所などをチェックするツールとして、私はmypyを導入しました。
+VSCodeで開発している場合Microsoftが開発しているPylanceの型チェック機能を使う人が多いかもしれません。
+しかし、例えばGitのHookやCI、Djangoなどフレームワークのmypyプラグインなどの他ツールとの連携を考えると、Pythonの公式が開発しているmypyが良さそうです。
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+
+### [mypy](https://mypy.readthedocs.io/en/stable/index.html)
+
+mypyは下記コマンドでインストールできます。
+
+```bash
+pip install mypy
+```
+
+また、下記コマンドで指定のファイルおよびディレクトリ内のファイルをチェックします。
+
+```bash
+mypy {source_file_or_directory}
+```
+
+設定はpyproject.tomlに記載します。
+
+```toml:pyproject.toml
+[tool.mypy]
+# https://mypy.readthedocs.io/en/stable/config_file.html#example-pyproject-toml
+
+# strictモードを有効化
+strict = true
+
+# プラグイン設定
+# plugins = ["mypy_django_plugin.main"]
+
+# mypyのDjangoプラグインの設定
+# [tool.django-stubs]
+# https://github.com/typeddjango/django-stubs
+# django_settings_module = "mysite.settings"
+```
+
 
 <!-- ---------------------------------------------------------------------- -->
 
