@@ -1,5 +1,5 @@
 ---
-title: "Python開発環境の備忘録"
+title: "Pythonのフォーマッターとリンターについての備忘録"
 emoji: "🐍"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["python", "black", "flake8", "mypy", "vscode"]
