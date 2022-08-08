@@ -210,7 +210,28 @@ strict = true
 
 ## 外部ツール連携
 
-### VSCode
+### Visual Studio Code
+
+VSCodeのユーザーもしくはワークスペースの設定に以下を記載します。
+挙動を見た感じだとCLI用の設定ファイルの設定を読み込んでいるようです。
+
+```json:settings.json
+{
+    "[python]": {
+        // 保存時にblackでフォーマットするが、blackのexclude設定は無視される
+        // https://stackoverflow.com/questions/70199494/how-to-make-vscode-honor-black-excluded-files-in-pyproject-toml-configuration-wh
+        "editor.formatOnSave": true,
+        // 保存時にisortでフォーマットする
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "python.analysis.typeCheckingMode": "off",  // mypyを使うのでVSCode本体の型チェックは無効化
+    "python.formatting.provider": "black",
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+}
+```
 
 
 <!-- ---------------------------------------------------------------------- -->
