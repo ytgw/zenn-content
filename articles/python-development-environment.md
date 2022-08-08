@@ -152,7 +152,7 @@ extend-exclude = **/migrations/*,venv/,.venv/
 # 無視するルールの設定
 # https://flake8.pycqa.org/en/latest/user/options.html#cmdoption-flake8-ignore
 # blackとの競合を避けるための設定
-# Line too long (82 > 79 characters) (E501)
+# Line too long (E501)
 # Line break occurred before a binary operator (W503)
 ignore = E501,W503
 ```
