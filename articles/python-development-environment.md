@@ -238,3 +238,52 @@ VSCodeのユーザーもしくはワークスペースの設定に以下を記�
 
 
 ### Git
+
+Gitのフック機能を使うことで、ソースコードが不適な状態でコミットやプッシュができないようにします。
+[こちら](https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA-Git-%E3%83%95%E3%83%83%E3%82%AF)を参考にしました。
+
+#### pre-commit
+
+フォーマッター、リンター、型チェックはコミット前に実施し、成功した場合だけコミットするようにします。
+.git/hooks/pre-commitというファイルを作成し、実行権限をつけます。
+またファイルには以下の内容を記載します。
+
+```bash:.git/hooks/pre-commit
+#!/bin/bash -eu
+
+# gitのhookはリポジトリのルートディレクトリで実行される
+# https://git-scm.com/docs/githooks
+
+# 仮想環境のロード
+source ./venv/bin/activate
+
+# フォーマッター、リンター、型チェックの実行
+isort .
+black .
+flake8 .
+mypy .
+```
+
+
+#### pre-push
+
+私はテストコードとプロダクトコードのコミットを分けることが多いので、コミット前のテストはせず、プッシュ前にテストをして、成功した場合だけプッシュするようにします。
+
+```bash:.git/hooks/pre-push
+#!/bin/bash -eu
+
+# gitのhookはリポジトリのルートディレクトリで実行される
+# https://git-scm.com/docs/githooks
+
+# 仮想環境のロード
+source ./venv/bin/activate
+
+# フォーマッター、リンター、型チェックの実行
+isort .
+black .
+flake8 .
+mypy .
+
+# テストの実行
+# python manage.py test  # Djangoのテスト
+```
