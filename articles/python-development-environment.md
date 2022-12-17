@@ -189,6 +189,16 @@ mypy {source_file_or_directory}
 # strictモードを有効化
 strict = true
 
+# 下記エラーの対策
+# module is installed, but missing library stubs or py.typed marker
+# スタブが無いモジュールについてはignore_missing_importsをtrueにする
+# [[tool.mypy.overrides]]
+# module = [
+#     "module1",
+#     "module2"
+# ]
+# ignore_missing_imports = true
+
 # プラグイン設定
 # plugins = ["mypy_django_plugin.main"]
 
