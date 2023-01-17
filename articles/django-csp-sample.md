@@ -3,7 +3,7 @@ title: "DjangoでのContent-Security-Policy設定方法"
 emoji: "📝"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Django", "ContentSecurityPolicy", "CSP", "セキュリティ", "Python"]
-published: false
+published: true
 ---
 
 ## はじめに
