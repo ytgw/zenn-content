@@ -3,7 +3,7 @@ title: "TypeScriptとReactの開発環境構築の備忘録"
 emoji: "⚛️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["typescript", "react", "eslint", "prettier"]
-published: false
+published: true
 ---
 
 
