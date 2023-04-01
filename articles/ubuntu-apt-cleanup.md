@@ -3,7 +3,7 @@ title: "Ubuntuのapt環境の整理整頓"
 emoji: "🧹"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["ubuntu", "apt"]
-published: false
+published: true
 ---
 
 ## はじめに
