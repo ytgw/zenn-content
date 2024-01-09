@@ -3,7 +3,7 @@ title: "Ryzen CPU搭載のUbuntuノートPCでのキーボードトラブル"
 emoji: "💭"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["ryzen", "ubuntu"]
-published: false
+published: true
 ---
 
 ## 概要
