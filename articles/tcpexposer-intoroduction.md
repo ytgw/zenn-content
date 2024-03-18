@@ -20,7 +20,7 @@ published: true
 
 ```mermaid
 sequenceDiagram
-    actor client as ローカルサーバーのクライアント
+    actor client as リモートクライアント
     participant exposer as TCP Exposer
     participant local as ローカルサーバー
 
