@@ -18,8 +18,23 @@ published: true
 使い方は簡単で ```ssh -R 80:localhost:8080 anonymous@tcpexposer.com``` のようなコマンドをローカルサーバーで実行するだけです。
 これを実行すると下記シーケンス図のように、ローカルサーバーの8080番ポートにインターネットからアクセスできるようになります。
 
-![シーケンス図](/images/tcpexposer-intoroduction/sequence.png)
-*シーケンス図*
+```mermaid
+sequenceDiagram
+    actor client as ローカルサーバーのクライアント
+    participant exposer as TCP Exposer
+    participant local as ローカルサーバー
+
+    local ->> exposer : SSHで接続
+    exposer -->> local : 接続用のサブドメインもしくはTCPポート番号の通知
+
+    Note over client,local: TCP Exposerとローカルサーバー間のSSH接続確立後
+
+    client ->> exposer : 接続用のサブドメインもしくはTCPポート番号へリクエスト
+    exposer ->> local : リクエストを転送
+
+    local -->> exposer : リクエストへのリプライ
+    exposer -->> client : リプライを転送
+```
 
 また、本サービスを開発・運用する際に利用したソフトウェアや他サービスとその選定理由については[こちらのZennの記事](https://zenn.dev/teasy/articles/tcpexposer-tech)に記載しています。
 ご興味が出たらチェックしてみてください。
