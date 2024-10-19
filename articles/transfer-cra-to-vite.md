@@ -3,7 +3,7 @@ title: "Create React AppからViteへの移行"
 emoji: "🐥"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["react", "vite", "createreactapp"]
-published: false
+published: true
 ---
 
 ## 概要
