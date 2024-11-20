@@ -8,7 +8,7 @@ published: false
 
 ## 概要
 C/C++の実行ファイルにGitのコミットハッシュ値を埋め込む方法を紹介します。
-本当実行ファイルが更新されたかを確認したいときに役立つと思います。
+本当に実行ファイルが更新されたかを確認したいときに役立つと思います。
 自動ビルドのパイプラインに組み込んでも良いかもしれません。
 
 
@@ -39,9 +39,11 @@ g++ -D GIT_HASH=\"foo\" -o main main.cpp
 # コマンドの結果を呼び出してGIT_HASHに埋め込む
 g++ -D GIT_HASH=\"$(echo bar)\" -o main main.cpp
 
-# gitのハッシュ値をGIT_HASHに埋め込む
-g++ -D GIT_HASH=\"$(git show --no-patch --format='%H')\" -o main main.cpp  # full hash, example: 007697f08129d72c6ef041e02ea4ca88715a7d5d
-g++ -D GIT_HASH=\"$(git show --no-patch --format='%h')\" -o main main.cpp  # short hash, example: 007697f
+# gitのcommit hashをGIT_HASHに埋め込む(example: 007697f08129d72c6ef041e02ea4ca88715a7d5d)
+g++ -D GIT_HASH=\"$(git show --no-patch --format='%H')\" -o main main.cpp
+
+# gitのabbreviated commit hashをGIT_HASHに埋め込む(example: 007697f)
+g++ -D GIT_HASH=\"$(git show --no-patch --format='%h')\" -o main main.cpp
 ```
 
 Makefileでもコマンド実行結果を変数に格納できるので類似の方法でハッシュを埋め込むことができます。
