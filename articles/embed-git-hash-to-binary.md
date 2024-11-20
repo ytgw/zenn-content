@@ -3,7 +3,7 @@ title: "C/C++の実行ファイルにGitのコミットハッシュ値を埋め�
 emoji: "©"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["cpp", "c", "git", "makefile"]
-published: false
+published: true
 ---
 
 ## 概要
