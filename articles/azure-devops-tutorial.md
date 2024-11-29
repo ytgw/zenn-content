@@ -3,7 +3,7 @@ title: "Azure DevOps/Pipelinesでの自動ビルド環境構築"
 emoji: "📘"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["azure", "cpp", "docker", "githubactions"]
-published: false
+published: true
 ---
 
 ## 概要
